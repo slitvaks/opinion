@@ -8,24 +8,31 @@
         <p>JavaScript var mainīt atribūtu vērtības HTML.</p>
         <p>Šajā gadījumā JavaScript maina attēla atribūta src (avota) vērtību.</p>
 
-        <!-- Poga "Man nepatīk!" -->
+      
         <button onclick="dislike()">Man nepatīk!</button>
+        <span id="dislike-count">0</span> <!-- Klikšķu skaitītājs "Man nepatīk!" -->
 
-        <!-- Attēls, kuru mainīsim -->
+      
         <img id="MyImage" src="file://ri.riga.lv/r95vs/Audzekni/slitvaks/My%20Documents/My%20Pictures/dont_like-symbol.png" style="width:100px; vertical-align: middle;">
 
-        <!-- Poga "Man patīk" -->
+       
         <button onclick="like()">Man patīk</button>
+        <span id="like-count">0</span> <!-- Klikšķu skaitītājs "Man patīk" -->
 
         <script>
-            // Funkcija, kas maina attēlu uz "man patīk"
+            let likeCount = 0;
+            let dislikeCount = 0;
+
+            
             function like() {
-                document.getElementById("MyImage").src = "file://ri.riga.lv/r95vs/Audzekni/slitvaks/My%20Documents/My%20Pictures/like-symbol.png";
+                likeCount++;
+                document.getElementById("like-count").innerText = likeCount;
             }
 
-            // Funkcija, kas maina attēlu uz "man nepatīk"
+           
             function dislike() {
-                document.getElementById("MyImage").src = "file://ri.riga.lv/r95vs/Audzekni/slitvaks/My%20Documents/My%20Pictures/dont_like-symbol.png";
+                dislikeCount++;
+                document.getElementById("dislike-count").innerText = dislikeCount;
             }
         </script>
     </body>
